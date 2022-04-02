@@ -10,8 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.mbankingapp.DataManagment.BankAccountDataManager;
 import com.example.mbankingapp.R;
-import com.example.mbankingapp.RememberCredentials;
 
 public class RegisterActivityCredentials extends AppCompatActivity {
 
@@ -20,7 +20,7 @@ public class RegisterActivityCredentials extends AppCompatActivity {
     EditText surnameEdit;
 
     // Object used to manage user's data
-    RememberCredentials credentialsManager;
+    BankAccountDataManager userData;
 
     // just button
     Button continueBtn;
@@ -39,7 +39,7 @@ public class RegisterActivityCredentials extends AppCompatActivity {
         surnameEdit = (EditText) findViewById(R.id.surname);
 
         // Credentials manager
-        credentialsManager = new RememberCredentials(this);
+        userData = new BankAccountDataManager(this);
 
         // Continue button
         continueBtn = (Button) findViewById(R.id.continueButton);
@@ -70,8 +70,7 @@ public class RegisterActivityCredentials extends AppCompatActivity {
                     Toast.makeText(context, "Surname missing", Toast.LENGTH_SHORT).show();                }
                 else {
                     // Writes name and surname into SharedPreference file
-                    credentialsManager.setName(nameEdit.getText().toString());
-                    credentialsManager.setSurname(surnameEdit.getText().toString());
+                    userData.storeCredentials(nameEdit.getText().toString(), surnameEdit.getText().toString());
 
                     // continue registration process
                     startActivity(startPinActivity);

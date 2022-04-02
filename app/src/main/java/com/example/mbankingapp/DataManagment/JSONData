@@ -1,0 +1,22 @@
+// get all data out of JSONObject
+                try {
+                    String userId = data.getString("user_id");
+                    JSONArray accounts = data.getJSONArray("acounts");
+                    // output to text view
+                    output += "User id: " + userId + '\n';
+                    numOfAccounts = accounts.length() + 1;
+                    output += "Number of accounts: " + numOfAccounts + '\n';
+                    for(i = 0; i < accounts.length(); i++) {
+                        j++;
+                        output += j + ". account: \n";
+                        output += accounts.getJSONObject(i).getString("IBAN").toString() + '\n';
+                    }
+
+
+
+                    responseTxt.setText(output);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.d("TAG", "JSONException: " + e.toString());
+                }

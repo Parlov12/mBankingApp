@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 // class used to write data to SharedPreference file and to store it permanently
-public class UserDataManager {
+public class SharedPreferencesDataManager {
 
     // SharedPreference
     SharedPreferences pref;
@@ -12,7 +12,7 @@ public class UserDataManager {
     SharedPreferences.Editor editor;
 
     // constructor
-    public UserDataManager(Context context) {
+    public SharedPreferencesDataManager(Context context) {
         pref = context.getSharedPreferences("sharedPreferencesFile", Context.MODE_PRIVATE);
         editor = pref.edit();
     }
