@@ -7,7 +7,8 @@ public class User extends Account{
     String userId = "";
     List<Account> accounts = new ArrayList<>();
 
-    public User() {
+    public User(String id) {
+        super();
 
     }
 

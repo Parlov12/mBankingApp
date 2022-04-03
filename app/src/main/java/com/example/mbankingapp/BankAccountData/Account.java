@@ -6,10 +6,18 @@ import java.util.List;
 public class Account extends Transaction{
     String id = "";
     String IBAN = "";
+    String amount = "";
     String currency = "";
     List<Transaction> transactions = new ArrayList<>();
     int counter = 0;
 
+
+    public Account(String id, String iban, String amount, String currency) {
+        this.id = id;
+        this.IBAN = iban;
+        this.amount = amount;
+        this.currency = currency;
+    }
 
     public Account() {
 
@@ -47,9 +55,27 @@ public class Account extends Transaction{
         return transactions;
     }
 
+    @Override
+    public String getAmount() {
+        return amount;
+    }
+
+    @Override
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+
     public void updateTransaction(Transaction transaction) {
         this.transactions.add(transaction);
     }
+
+    public void updateAccount(String id, String iban, String amount, String currency) {
+        this.id = id;
+        this.IBAN = iban;
+        this.amount = amount;
+        this.currency = currency;
+    }
+
 
 
 }

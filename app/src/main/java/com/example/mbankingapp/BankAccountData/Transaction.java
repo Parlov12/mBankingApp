@@ -14,8 +14,12 @@ public class Transaction {
         RECEIVED
     }
 
-    public Transaction(){
-
+    public Transaction(String id , String date , String description, String amount, String type){
+        this.id = id;
+        this.date = date;
+        this.description = description;
+        this.amount = amount;
+        this.type = type;
     }
 
     public String getId() {
@@ -58,7 +62,7 @@ public class Transaction {
         this.type = type;
     }
 
-    public void setTransaction(String id, String date, String description, String amount, TransactionType type) {
+    public void updateTransaction(String id, String date, String description, String amount, TransactionType type) {
         this.id = id;
         this.date = date;
         this.description = description;

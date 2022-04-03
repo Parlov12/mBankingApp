@@ -10,6 +10,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.mbankingapp.BankAccountData.User;
 import com.example.mbankingapp.MySingleton;
 import com.google.gson.Gson;
 
@@ -24,14 +25,21 @@ public class JSONObjectData {
     public Context context;
     public JSONObject JSONObjectContent;
 
+    // call back reference
+    VolleyCallBack volleyCallBack;
+
     // constructor
     public JSONObjectData(Context ctx) {
         this.context = ctx;
     }
 
-    // method getJSONObject that retrieves JSONObject + callback
-    public JSONObject getJSONObject (final VolleyCallBack callBack) {
+    // for main activity
+    public void setVolleyCallBack(VolleyCallBack volleyCallBack) {
+        this.volleyCallBack = volleyCallBack;
+    }
 
+    // method getJSONObject that retrieves JSONObject + callback
+    public JSONObject getJSONObject () {
 
         // url to get JSONObject containing user bank account data
         String url = "https://mportal.asseco-see.hr/builds/ISBD_public/Zadatak_1.json";
@@ -43,12 +51,8 @@ public class JSONObjectData {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("JSONObject response", response.toString());
-                        try {
-                            JSONObjectContent = response;
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            Log.d("RESPONSE_ERROR", "Response error!");
-                        }
+                        JSONObjectContent = response;
+                        volleyCallBack.onSuccess(response);
                     }
                 }, new Response.ErrorListener() {
                     @Override
@@ -62,9 +66,10 @@ public class JSONObjectData {
         return JSONObjectContent;
     }
 
+
     // defining a callback in the case code changes in the future
     public interface VolleyCallBack {
-        void onSuccess();
+        void onSuccess(JSONObject jsonObject);
     }
 
 }

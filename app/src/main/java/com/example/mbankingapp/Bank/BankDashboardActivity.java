@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class BankDashboardActivity extends AppCompatActivity {
+public class BankDashboardActivity extends AppCompatActivity implements JSONObjectData.VolleyCallBack {
 
     // test Button
     Button requestBtn;
@@ -52,24 +52,19 @@ public class BankDashboardActivity extends AppCompatActivity {
         JSONObjectVar  = new JSONObjectData(this);
         //data = JSONObjectVar.getJSONObject();
 
-        // test button
-        requestBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                data = JSONObjectVar.getJSONObject(new JSONObjectData.VolleyCallBack() {
-                    @Override
-                    public void onSuccess() {
-                    }
-                });
-
-                responseTxt.setText(data.toString());
-            }
-        });
-
-
-
+        // doing request with callback
+        JSONObjectVar.getJSONObject();
+        JSONObjectVar.setVolleyCallBack(this);
 
 
     }
 
+    // implementation of callback in BankDashboardActivity
+    @Override
+    public void onSuccess(JSONObject jsonObject) {
+        responseTxt.setText(jsonObject.toString());
+
+        // LOAD DATA
+
+    }
 }
