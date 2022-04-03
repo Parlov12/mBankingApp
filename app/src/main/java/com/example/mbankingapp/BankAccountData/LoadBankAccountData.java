@@ -41,15 +41,29 @@ public class LoadBankAccountData {
                 this.numberOfAccounts += 1;
             }
 
+            // i - number of accounts
             for(i = 0; i < transactions.size(); i++) {
-                for(j = 0; j < transactions.get(j).size())
-                emptyTransaction.updateTransaction(transactions.get(i).getJSONObject());
-                user.accounts.get(i).transactions.
+                // j - number of transactions of each account
+                for(j = 0; j < transactions.get(j).length(); j++){
+                    try {
+                        emptyTransaction.updateTransaction(
+                                transactions.get(i).getJSONObject(j).getString("id"),
+                                transactions.get(i).getJSONObject(j).getString("date"),
+                                transactions.get(i).getJSONObject(j).getString("description"),
+                                transactions.get(i).getJSONObject(j).getString("amount"),
+                                transactions.get(i).getJSONObject(j).getString("type"));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        emptyTransaction.updateTransaction(
+                                transactions.get(i).getJSONObject(j).getString("id"),
+                                transactions.get(i).getJSONObject(j).getString("date"),
+                                transactions.get(i).getJSONObject(j).getString("description"),
+                                transactions.get(i).getJSONObject(j).getString("amount"));
+                    }
+
+                    user.accounts.get(i).transactions.add(emptyTransaction);
+                }
             }
-
-
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }

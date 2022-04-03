@@ -66,7 +66,6 @@ public class JSONObjectData {
         return JSONObjectContent;
     }
 
-
     // defining a callback in the case code changes in the future
     public interface VolleyCallBack {
         void onSuccess(JSONObject jsonObject);

@@ -7,12 +7,6 @@ public class Transaction {
     String amount = "";
     String type = "";
 
-    enum TransactionType {
-        EXCHANGE,
-        GSM_VOUCHER,
-        PAYMENT,
-        RECEIVED
-    }
 
     public Transaction(String id , String date , String description, String amount, String type){
         this.id = id;
@@ -62,7 +56,15 @@ public class Transaction {
         this.type = type;
     }
 
-    public void updateTransaction(String id, String date, String description, String amount, TransactionType type) {
+    public void updateTransaction(String id, String date, String description, String amount, String type) {
+        this.id = id;
+        this.date = date;
+        this.description = description;
+        this.amount = amount;
+        this.type = type.toString();
+    }
+
+    public void updateTransaction(String id, String date, String description, String amount) {
         this.id = id;
         this.date = date;
         this.description = description;

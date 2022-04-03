@@ -3,7 +3,7 @@ package com.example.mbankingapp.BankAccountData;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Account extends Transaction{
+public class Account {
     String id = "";
     String IBAN = "";
     String amount = "";
@@ -25,12 +25,10 @@ public class Account extends Transaction{
 
 
     // GETTERS AND SETTERS
-    @Override
     public String getId() {
         return id;
     }
 
-    @Override
     public void setId(String id) {
         this.id = id;
     }
@@ -55,12 +53,10 @@ public class Account extends Transaction{
         return transactions;
     }
 
-    @Override
     public String getAmount() {
         return amount;
     }
 
-    @Override
     public void setAmount(String amount) {
         this.amount = amount;
     }

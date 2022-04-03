@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.mbankingapp.BankAccountData.LoadBankAccountData;
 import com.example.mbankingapp.DataManagment.JSONObjectData;
 import com.example.mbankingapp.R;
 import org.json.JSONArray;
@@ -26,6 +28,8 @@ public class BankDashboardActivity extends AppCompatActivity implements JSONObje
     // get JSONObject
     JSONObjectData JSONObjectVar;
     JSONObject data;
+
+
 
     String output = "";
     int numOfAccounts = 0;
@@ -65,6 +69,6 @@ public class BankDashboardActivity extends AppCompatActivity implements JSONObje
         responseTxt.setText(jsonObject.toString());
 
         // LOAD DATA
-
+        LoadBankAccountData loadData = new LoadBankAccountData(jsonObject);
     }
 }
