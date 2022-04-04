@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.mbankingapp.BankAccountData.LoadBankAccountData;
+import com.example.mbankingapp.Constants;
 import com.example.mbankingapp.DataManagment.JSONObjectData;
 import com.example.mbankingapp.R;
 import org.json.JSONArray;
@@ -17,7 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class BankDashboardActivity extends AppCompatActivity implements JSONObjectData.VolleyCallBack {
+public class BankDashboardActivity extends AppCompatActivity{
 
     // test Button
     Button requestBtn;
@@ -27,15 +28,16 @@ public class BankDashboardActivity extends AppCompatActivity implements JSONObje
 
     // get JSONObject
     JSONObjectData JSONObjectVar;
-    JSONObject data;
 
+    // LoadBankAccountData
+    LoadBankAccountData ldData;
 
 
     String output = "";
     int numOfAccounts = 0;
     int j = 0;
     int i = 0;
-
+    String msg = "";
 
 
     @Override
@@ -47,28 +49,25 @@ public class BankDashboardActivity extends AppCompatActivity implements JSONObje
         requestBtn = (Button) findViewById(R.id.request);
 
         responseTxt = (TextView) findViewById(R.id.responseText);
-        // ...
 
         // making TextView scrollable
         responseTxt.setMovementMethod(new ScrollingMovementMethod());
 
+
         // making request and getting JSONObject
         JSONObjectVar  = new JSONObjectData(this);
-        //data = JSONObjectVar.getJSONObject();
 
-        // doing request with callback
-        JSONObjectVar.getJSONObject();
-        JSONObjectVar.setVolleyCallBack(this);
+        ldData = JSONObjectVar.getBankAccountData();
+
+        msg += "User id:" + ldData.user.getUserId();
+
+        responseTxt.setText(msg);
+
 
 
     }
 
-    // implementation of callback in BankDashboardActivity
-    @Override
-    public void onSuccess(JSONObject jsonObject) {
-        responseTxt.setText(jsonObject.toString());
 
-        // LOAD DATA
-        LoadBankAccountData loadData = new LoadBankAccountData(jsonObject);
-    }
+
+
 }

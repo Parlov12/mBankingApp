@@ -5,7 +5,7 @@ import java.util.List;
 
 public class User extends Account{
     String userId = "";
-    List<Account> accounts = new ArrayList<>();
+    public List<Account> accounts = new ArrayList<>();
 
     public User(String id) {
         super();

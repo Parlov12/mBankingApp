@@ -23,7 +23,6 @@ public class Account {
 
     }
 
-
     // GETTERS AND SETTERS
     public String getId() {
         return id;

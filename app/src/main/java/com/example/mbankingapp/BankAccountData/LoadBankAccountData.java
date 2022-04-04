@@ -10,7 +10,7 @@ import java.util.List;
 public class LoadBankAccountData {
 
     // user contains all data of one user
-    User user;
+    public User user;
     int numberOfAccounts = 0;
     // list of JSONArray-s
     // Each JSONArray in list represents transactions of one account
@@ -25,7 +25,7 @@ public class LoadBankAccountData {
     public LoadBankAccountData(JSONObject jsonObject) {
         try {
             // LOADING DATA FROM JSONObject TO LoadBankAccountData
-            user.id = jsonObject.getString("id");
+            user =  new User(jsonObject.getString("id"));
             JSONArray racuni = jsonObject.getJSONArray("acounts");
             for(i = 0; i < racuni.length(); i++) {
                 this.emptyAccount.updateAccount(
@@ -46,6 +46,7 @@ public class LoadBankAccountData {
                 // j - number of transactions of each account
                 for(j = 0; j < transactions.get(j).length(); j++){
                     try {
+                        // try update transaction with type
                         emptyTransaction.updateTransaction(
                                 transactions.get(i).getJSONObject(j).getString("id"),
                                 transactions.get(i).getJSONObject(j).getString("date"),
@@ -53,6 +54,7 @@ public class LoadBankAccountData {
                                 transactions.get(i).getJSONObject(j).getString("amount"),
                                 transactions.get(i).getJSONObject(j).getString("type"));
                     } catch (Exception e) {
+                        // if transaction doesn't contain type, update it without type
                         e.printStackTrace();
                         emptyTransaction.updateTransaction(
                                 transactions.get(i).getJSONObject(j).getString("id"),
