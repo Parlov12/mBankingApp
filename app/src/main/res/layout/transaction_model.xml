@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/okvir_transakcije"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#F1ABAB"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="150,00kn"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/okvir_type_i_description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="GSM VOUCHER"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="UPLATA 2"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="28.04.2022."
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

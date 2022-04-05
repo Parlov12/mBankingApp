@@ -6,14 +6,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
+import com.android.volley.toolbox.BasicNetwork;
+import com.example.mbankingapp.DataManagment.BankAccountDataManager;
 import com.example.mbankingapp.R;
 
 public class PinActivity extends AppCompatActivity {
 
     Intent confirmPinActivity;
 
-    Button confirmPinBtn;
+    Button enterPinButton;
+
+    EditText pinInput;
+
+    Boolean enterButtonState = false;
+
+    BankAccountDataManager bankAccountDataManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +30,24 @@ public class PinActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pin);
 
         // button that takes you to ConfirmPinActivity
-        confirmPinBtn = (Button) findViewById(R.id.confirmButton);
+        enterPinButton = (Button) findViewById(R.id.enterPinButton);
 
         // ConfirmPinActivity Intent
         confirmPinActivity = new Intent(this, ConfirmPinActivity.class);
 
+        // pin input button
+        pinInput = (EditText) findViewById(R.id.pinInput);
 
-        confirmPinBtn.setOnClickListener(new View.OnClickListener() {
+        // bank account data
+        bankAccountDataManager = new BankAccountDataManager(this);
+
+        enterPinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(confirmPinActivity);
+                if(pinInput.length() >= 4) {
+                    bankAccountDataManager.storePin(pinInput.getText().toString());
+                    startActivity(confirmPinActivity);
+                }
             }
         });
     }

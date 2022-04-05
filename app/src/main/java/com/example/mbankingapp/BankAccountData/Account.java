@@ -1,14 +1,17 @@
 package com.example.mbankingapp.BankAccountData;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
+
+// class that contains all bank account data and transactions stored in the list transactions
 public class Account {
     String id = "";
     String IBAN = "";
     String amount = "";
     String currency = "";
-    List<Transaction> transactions = new ArrayList<>();
+    public List<Transaction> transactions = new ArrayList<>();
     int counter = 0;
 
 

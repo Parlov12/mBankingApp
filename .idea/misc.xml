@@ -3,12 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/borna/AndroidStudioProjects/mBankingApp/app/src/main/res/drawable/button_controller.xml" value="0.2735" />
+        <entry key="..\:/Users/borna/AndroidStudioProjects/mBankingApp/app/src/main/res/drawable/button_off.xml" value="0.2735" />
+        <entry key="..\:/Users/borna/AndroidStudioProjects/mBankingApp/app/src/main/res/drawable/button_on.xml" value="0.2735" />
         <entry key="..\:/Users/borna/AndroidStudioProjects/mBankingApp/app/src/main/res/drawable/pin_edit_text.xml" value="0.3828125" />
-        <entry key="..\:/Users/borna/AndroidStudioProjects/mBankingApp/app/src/main/res/layout/activity_bank_dashboard.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/borna/AndroidStudioProjects/mBankingApp/app/src/main/res/layout/activity_bank_dashboard.xml" value="0.15" />
         <entry key="..\:/Users/borna/AndroidStudioProjects/mBankingApp/app/src/main/res/layout/activity_confirm_pin.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/borna/AndroidStudioProjects/mBankingApp/app/src/main/res/layout/activity_pin.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/borna/AndroidStudioProjects/mBankingApp/app/src/main/res/layout/activity_register_credentials.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/borna/AndroidStudioProjects/mBankingApp/app/src/main/res/layout/activity_welcome.xml" value="0.33" />
+        <entry key="..\:/Users/borna/AndroidStudioProjects/mBankingApp/app/src/main/res/layout/transaction_model.xml" value="0.33" />
       </map>
     </option>
   </component>

@@ -3,15 +3,25 @@ package com.example.mbankingapp.BankAccountData;
 import java.util.ArrayList;
 import java.util.List;
 
+// class that contains user id and list of accounts
 public class User extends Account{
     String userId = "";
     public List<Account> accounts = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                '}';
+    }
+
     public User(String id) {
         super();
+        this.userId = id;
 
     }
 
+    // GETTERS AND SETTERS
     public String getUserId() {
         return userId;
     }

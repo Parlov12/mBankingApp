@@ -29,5 +29,10 @@ public class SharedPreferencesDataManager {
         editor.commit();
     }
 
+    public String getValue(String nameValue) {
+        String string = pref.getString(nameValue, "");
+        return string;
+    }
+
 
 }

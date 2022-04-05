@@ -23,6 +23,7 @@ public class BankAccountDataManager extends SharedPreferencesDataManager{
 
     public BankAccountDataManager(Context context) {
         super(context);
+
     }
 
 

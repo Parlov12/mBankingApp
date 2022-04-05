@@ -1,5 +1,6 @@
 package com.example.mbankingapp.BankAccountData;
 
+// represents single transaction
 public class Transaction {
     String id = "";
     String date = "";
@@ -14,6 +15,11 @@ public class Transaction {
         this.description = description;
         this.amount = amount;
         this.type = type;
+    }
+
+
+    public Transaction() {
+
     }
 
     public String getId() {
