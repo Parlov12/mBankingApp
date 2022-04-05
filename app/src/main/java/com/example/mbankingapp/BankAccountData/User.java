@@ -7,6 +7,7 @@ import java.util.List;
 public class User extends Account{
     String userId = "";
     public List<Account> accounts = new ArrayList<>();
+    public int numberOfAccounts = 0;
 
     @Override
     public String toString() {

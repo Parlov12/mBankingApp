@@ -54,7 +54,7 @@ public class BankDashboardActivity extends AppCompatActivity{
 
     RecyclerView rw;
     User pomUser = new User("ID");
-    CustomAdapter adapter = new CustomAdapter();
+    CustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,10 +78,9 @@ public class BankDashboardActivity extends AppCompatActivity{
             public void onSuccess(JSONObject jsonObject) {
                 user = new LoadBankAccountData().getLoadBankAccountData(jsonObject);
                 Log.d("TAG", user.toString());
-                responseTxt.setText(user.toString());
                 Log.d("TAG", "OBRADIO PODATKE");
 
-                adapter.updateAdapter(user);
+                adapter = new CustomAdapter(user, 0);
 
                 rw.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 rw.setAdapter(adapter);
