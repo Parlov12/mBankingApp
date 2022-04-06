@@ -16,8 +16,8 @@
 
     <ScrollView
         android:id="@+id/scrollView1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
@@ -27,8 +27,8 @@
         <LinearLayout
             android:id="@+id/linear1"
             android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@+id/scrollView1"
             app:layout_constraintBottom_toTopOf="@+id/scrollView1"
             app:layout_constraintStart_toStartOf="@+id/scrollView1"
@@ -36,7 +36,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rw_adapter"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/transaction_model"
                 app:layout_constraintTop_toTopOf="@+id/linear1"

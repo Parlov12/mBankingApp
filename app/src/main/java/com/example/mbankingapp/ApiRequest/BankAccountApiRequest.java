@@ -3,6 +3,9 @@ package com.example.mbankingapp.ApiRequest;
 import android.content.Context;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -25,7 +28,7 @@ public class BankAccountApiRequest {
     }
 
     // method getJSONObject that retrieves JSONObject + callback
-    public void getBankAccountData (final BankAccountCallback callBack) {
+    public void getBankAccountData (final BankAccountCallback callBack, RecyclerView recyclerView) {
 
         // url to get JSONObject containing user bank account data
         String url = "https://mportal.asseco-see.hr/builds/ISBD_public/Zadatak_1.json";

@@ -32,6 +32,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         this.accountId = numberOfAccount;
 
         for(i = 0; i < user.accounts.get(numberOfAccount).transactions.size(); i++) {
+
             Transaction t = user.accounts.get(numberOfAccount).transactions.get(i);
 
             amount.add(t.getAmount());

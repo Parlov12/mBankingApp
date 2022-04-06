@@ -39,6 +39,9 @@ public class BankDashboardActivity extends AppCompatActivity{
     // LoadBankAccountData
     LoadBankAccountData ldData;
 
+    RecyclerView recyclerView;
+    CustomAdapter adapter;
+
 
     String output = "";
     int numOfAccounts = 0;
@@ -52,9 +55,7 @@ public class BankDashboardActivity extends AppCompatActivity{
     Transaction emptyTransaction = new Transaction("0", "0","0","0", "");
 
 
-    RecyclerView rw;
     User pomUser = new User("ID");
-    CustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +70,7 @@ public class BankDashboardActivity extends AppCompatActivity{
         // making TextView scrollable
         responseTxt.setMovementMethod(new ScrollingMovementMethod());
 
-        rw = (RecyclerView) findViewById(R.id.rw_adapter);
+        recyclerView = (RecyclerView) findViewById(R.id.rw_adapter);
 
         BankAccountApiRequest bankAccountApiRequest = new BankAccountApiRequest(this);
 
@@ -80,12 +81,14 @@ public class BankDashboardActivity extends AppCompatActivity{
                 Log.d("TAG", user.toString());
                 Log.d("TAG", "OBRADIO PODATKE");
 
+
+
                 adapter = new CustomAdapter(user, 0);
 
-                rw.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                rw.setAdapter(adapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                recyclerView.setAdapter(adapter);
             }
-        });
+        }, recyclerView);
 
 
 
