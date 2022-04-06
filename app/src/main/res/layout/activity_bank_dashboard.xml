@@ -4,86 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Bank.BankDashboardActivity">
+    tools:context=".Bank.BankTransactions">
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
 
     <ScrollView
         android:id="@+id/scrollView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="@+id/guideline6"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteY="560dp">
 
         <LinearLayout
-            android:id="@+id/linear1"
+            android:id="@+id/linear0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@+id/scrollView1"
             app:layout_constraintBottom_toTopOf="@+id/scrollView1"
+            app:layout_constraintEnd_toEndOf="@+id/scrollView1"
             app:layout_constraintStart_toStartOf="@+id/scrollView1"
-            app:layout_constraintEnd_toEndOf="@+id/scrollView1">
+            app:layout_constraintTop_toTopOf="@+id/scrollView1">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rw_adapter"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/transaction_model"
-                app:layout_constraintTop_toTopOf="@+id/linear1"
-                app:layout_constraintBottom_toTopOf="@+id/linear1"
-                app:layout_constraintStart_toStartOf="@+id/linear1"
-                app:layout_constraintEnd_toEndOf="@+id/linear1"/>
+                tools:listitem="@layout/transaction_model" />
 
         </LinearLayout>
 
     </ScrollView>
+
 
     <TextView
         android:id="@+id/responseText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scrollbars="vertical"
-        app:layout_constraintTop_toTopOf="@+id/guideline6"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <Button
-        android:id="@+id/request"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Request"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        tools:layout_editor_absoluteY="560dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.087893866" />
-
-    <TextView
-        android:id="@+id/responseTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="RESPONSE TEXT"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,5 +34,10 @@ public class SharedPreferencesDataManager {
         return string;
     }
 
+    public int getIntValue(String nameValue) {
+        int value = pref.getInt(nameValue, 0);
+        return value;
+    }
+
 
 }

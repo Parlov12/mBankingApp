@@ -28,7 +28,7 @@ public class BankAccountApiRequest {
     }
 
     // method getJSONObject that retrieves JSONObject + callback
-    public void getBankAccountData (final BankAccountCallback callBack, RecyclerView recyclerView) {
+    public void getBankAccountData (final BankAccountCallback callBack) {
 
         // url to get JSONObject containing user bank account data
         String url = "https://mportal.asseco-see.hr/builds/ISBD_public/Zadatak_1.json";

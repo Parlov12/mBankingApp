@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:id="@+id/linear_racun1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/racun1_shape"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/iban1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="HR123456789101112" />
+
+            <TextView
+                android:id="@+id/balance1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="15000,00 HRK" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_racun2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/racun2_shape"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/iban2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="HR123456789101112" />
+
+            <TextView
+                android:id="@+id/balance2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="1450,00 EUR" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_racun3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/racun3_shape"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/iban3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="HR123456783421112" />
+
+            <TextView
+                android:id="@+id/balance3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="5650,00 DOLLAR" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

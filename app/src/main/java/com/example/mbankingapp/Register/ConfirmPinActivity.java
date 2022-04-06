@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.mbankingapp.Bank.BankDashboardActivity;
+import com.example.mbankingapp.Bank.AccountMainDashboard;
+import com.example.mbankingapp.Bank.BankTransactions;
 import com.example.mbankingapp.DataManagment.BankAccountDataManager;
-import com.example.mbankingapp.Interface.BankAccountCallback;
 import com.example.mbankingapp.R;
 
 public class ConfirmPinActivity extends AppCompatActivity {
@@ -29,7 +29,7 @@ public class ConfirmPinActivity extends AppCompatActivity {
         confirmConfirmBtn = (Button) findViewById(R.id.confirmConfirmButton);
 
         // BankDashboardActivity
-        mainBankDashboardActivity = new Intent(this, BankDashboardActivity.class);
+        mainBankDashboardActivity = new Intent(this, AccountMainDashboard.class);
 
         // bank account data
         bankAccountDataManager = new BankAccountDataManager(this);

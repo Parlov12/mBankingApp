@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -16,6 +17,7 @@ import com.example.mbankingapp.BankAccountData.LoadBankAccountData;
 import com.example.mbankingapp.BankAccountData.Transaction;
 import com.example.mbankingapp.BankAccountData.User;
 import com.example.mbankingapp.ApiRequest.BankAccountApiRequest;
+import com.example.mbankingapp.DataManagment.SharedPreferencesDataManager;
 import com.example.mbankingapp.Interface.BankAccountCallback;
 import com.example.mbankingapp.R;
 
@@ -25,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BankDashboardActivity extends AppCompatActivity{
+public class BankTransactions extends AppCompatActivity{
 
     // test Button
     Button requestBtn;
@@ -42,6 +44,9 @@ public class BankDashboardActivity extends AppCompatActivity{
     RecyclerView recyclerView;
     CustomAdapter adapter;
 
+    // numberOfAccount - to know which transactions to load
+    SharedPreferencesDataManager sharedPreferencesDataManager;
+    int numOfAccount;
 
     String output = "";
     int numOfAccounts = 0;
@@ -55,6 +60,7 @@ public class BankDashboardActivity extends AppCompatActivity{
     Transaction emptyTransaction = new Transaction("0", "0","0","0", "");
 
 
+
     User pomUser = new User("ID");
 
     @Override
@@ -62,8 +68,10 @@ public class BankDashboardActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank_dashboard);
 
+        sharedPreferencesDataManager = new SharedPreferencesDataManager(this);
 
-        requestBtn = (Button) findViewById(R.id.request);
+        numOfAccount = sharedPreferencesDataManager.getIntValue("NUM_OF_ACCOUNT");
+
 
         responseTxt = (TextView) findViewById(R.id.responseText);
 
@@ -81,14 +89,12 @@ public class BankDashboardActivity extends AppCompatActivity{
                 Log.d("TAG", user.toString());
                 Log.d("TAG", "OBRADIO PODATKE");
 
-
-
-                adapter = new CustomAdapter(user, 0);
+                adapter = new CustomAdapter(user, numOfAccount);
 
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 recyclerView.setAdapter(adapter);
             }
-        }, recyclerView);
+        });
 
 
 
